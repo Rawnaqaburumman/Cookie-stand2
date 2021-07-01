@@ -1,0 +1,41 @@
+
+table ,th,td {
+border : solid black 1px 
+  
+
+}
+table{
+    table-layout: auto;
+    width: 100%;  
+    color: rgb(226, 55, 43);
+  
+}
+
+
+h1 {
+    text-align: center;
+    color: rgb(20, 20, 20);
+    background-color: burlywood;
+    border-radius: 3rem;
+    padding: .9rem 3rem ;
+    font-size: 1.6rem;
+    margin:20px;
+    clear:both;
+    
+    }
+    nav ul li {
+        display: inline-block;
+        margin:20px; 
+    }
+    nav ul {
+    
+        background-color: burlywood;
+    }
+    
+    nav ul li a {
+        text-decoration: none;
+        color: gold;
+        font-size:x-large;
+       
+    }
+

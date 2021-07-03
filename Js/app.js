@@ -22,21 +22,12 @@ function Site(thesite, mincust, maxcust, avg) {
     this.maxcust = maxcust
     this.avg = avg
     // empty array to hold the random number of custors each hour
-
     this.randomcust1 = [];
-
     //empty array to hold the cookies sales 
     this.total = 0;
     this.cookiesnumber1 = [];
-
     sitearray.push(this);
-
-
-
-
 }
-
-
 // proto function calculate random number of customers
 Site.prototype.randomcust = function () {
     for (let j = 0; j < 14; j++) {
@@ -56,9 +47,8 @@ Site.prototype.cookiesnumber = function () {
     }
     console.log(this.total);
 
-
 }
-//
+
 
 
 
@@ -90,9 +80,13 @@ function buildingheader() {
     for (let i = 0; i < hours.length; i++) {
         let thelements = document.createElement('th');
         headerrow.appendChild(thelements);
-        thelements.textContent = hours[i];
+        if (i < 7 ){
+        thelements.textContent = hours[i] + ':00 am';}
+else {
+    thelements.textContent = hours[i] + ':00 pm';}
+}
+    
 
-    }
     let lastth = document.createElement('th');
     headerrow.appendChild(lastth);
     lastth.textContent = 'Daily location total';
@@ -141,44 +135,56 @@ function footerpart() {
 
 
 
-let megataotal = 0;
-for (let i = 0; i < hours.length; i++) {
-    let totaleachhour=0;
-    for (let j = 0; j < sitearray.length; j++) {
-        
-    
-        totaleachhour+=sitearray[j].cookiesnumber1[i];
-        megataotal+=sitearray[j].cookiesnumber1[i];
-    }
-    let footerdata=document.createElement('td');
-    footrow.appendChild(footerdata);
-    footerdata.textContent=totaleachhour;
-}
+    let megataotal = 0;
+    for (let i = 0; i < hours.length; i++) {
+        let totaleachhour = 0;
+        for (let j = 0; j < sitearray.length; j++) {
 
-let finldata =document.createElement('td');
-footrow.appendChild(finldata);
-finldata.textContent=(megataotal);
+
+            totaleachhour += sitearray[j].cookiesnumber1[i];
+            megataotal += sitearray[j].cookiesnumber1[i];
+        }
+        let footerdata = document.createElement('td');
+        footrow.appendChild(footerdata);
+        footerdata.textContent = totaleachhour;
+    }
+
+    let finldata = document.createElement('td');
+    footrow.appendChild(finldata);
+    finldata.textContent = (megataotal);
 
 }
 footerpart();
 
 
 let theform = document.getElementById('form');
-theform.addEventListener ('submit',handlesumbit);
+theform.addEventListener('submit', handlesumbit);
 
 
-function handlesumbit(event){
-  console.log('Hi');
-//event.preventDefult();
-let newsitename =event.target.name.value;
-let newmax= parseInt(event.target.max.value); 
-let newmin=parseInt(event.target.min.value);
-let newavg = parseFloat(event.target.avg.value);
-let newsite = new Site(newsitename, newmax, newmin, newavg);
+function handlesumbit(event) {
+ 
+    event.preventDefault();
+    let newsitename = event.target.name.value;
+    let newmax = parseInt(event.target.max.value);
+    let newmin = parseInt(event.target.min.value);
+    let newavg = parseFloat(event.target.avg.value);
 
-newsite.cookiesnumber();
-newsite.randomcust();
-newsite.render()
+    let newsite = new Site(newsitename, newmax, newmin, newavg);
+    //alert(newmax);
+    console.log(newsite);
+    newsite.randomcust();
+    newsite.cookiesnumber();
+
+   
+    let deleated = thetable.rows.length-1
+    thetable.deleteRow(deleated);
 
 
+    newsite.render()
+
+    footerpart();
 }
+
+
+//buildingheader();
+//footerpart();

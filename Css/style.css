@@ -1,35 +1,53 @@
-
-table ,th,td {
-border : solid black 1px 
-  
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap'); 
+body{
+background-color: #FFF9E3;
 
 }
-table{
+
+table {
     table-layout: auto;
     width: 100%;  
-    color: rgb(226, 55, 43);
-  
+    color: black;
+    font-weight: bold;
+    font-family: 'PT Serif', serif;
+    border: black solid;
+  text-align: left;
 }
 
 
-h1 {
+ .page2{
+
     text-align: center;
     color: rgb(20, 20, 20);
-    background-color: burlywood;
+    background-color:#F4A460;
     border-radius: 3rem;
     padding: .9rem 3rem ;
     font-size: 1.6rem;
     margin:20px;
     clear:both;
-    
+    font-family: 'PT Serif', serif;
+    }
+
+
+    .page1h{ text-align: center;
+        font-weight:bold;
+        font-size: xx-large;
+        f
+
+
+
     }
     nav ul li {
         display: inline-block;
         margin:20px; 
+        font-family: 'PT Serif', serif;
     }
     nav ul {
-    
-        background-color: burlywood;
+    margin-top: 0;
+        background-color: #F4A460 ;
     }
     
     nav ul li a {
@@ -39,21 +57,75 @@ h1 {
        
     }
 
-table{
-    color:black;
-    
-}
+
 button{
     padding: 10px;
     font-size: medium;
     font-weight: bold;
     color: black;
     border-radius: 3em;
-    background-color: burlywood;
+    background-color: #F4A460;
+    font-family: 'Rajdhani', sans-serif;
 }
 
-table thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
+
+form{
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: bold;
+ 
+}
+
+
+
+footer{
+
+    text-align: center;
+   margin-top: 350px;
+   font-weight: bold;
+   background-color:#F4A460 ;
+   font-family: 'Rajdhani', sans-serif;
+   margin-bottom: 0px;
+}
+
+
+legend { color: ;}
+
+.htmlpage {
+    margin-top: 630px;
+}
+
+
+td{
+    border: outset ;
+    color: #F4A460;
+}
+th {
+    border: inset ;
+    color: black;
+}
+img {
+    width:10%;
+    float:right;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+
+ .info li {
+    
+    font-family: 'Bree Serif', serif;;
+    font-size: large;
+    font-weight: lighter;
+    margin-left: 40px;
+}
+
+
+.sales{
+
+    text-align: center;
+   margin-top: 370px;
+   font-weight: bold;
+   background-color:#F4A460 ;
+   font-family: 'Rajdhani', sans-serif;
+ 
 }

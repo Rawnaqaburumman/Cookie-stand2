@@ -59,13 +59,16 @@ Site.prototype.cookiesnumber = function () {
 
 }
 //
+
+
+
+
 let Seattle = new Site('Seattle', 23, 65, 6.3);
 let Paris = new Site('Paris', 20, 38, 2.3);
 let Tokyo = new Site('Tokyo', 3, 24, 1.2);
 let Lima = new Site('Lima', 2, 16, 1.6);
 let Dubai = new Site('Dubai', 11, 38, 3.7);
 console.log(sitearray);
-
 
 
 
@@ -160,7 +163,22 @@ finldata.textContent=(megataotal);
 footerpart();
 
 
+let theform = document.getElementById('form');
+theform.addEventListener ('submit',handlesumbit);
 
 
+function handlesumbit(event){
+  console.log('Hi');
+//event.preventDefult();
+let newsitename =event.target.name.value;
+let newmax= parseInt(event.target.max.value); 
+let newmin=parseInt(event.target.min.value);
+let newavg = parseFloat(event.target.avg.value);
+let newsite = new Site(newsitename, newmax, newmin, newavg);
+
+newsite.cookiesnumber();
+newsite.randomcust();
+newsite.render()
 
 
+}

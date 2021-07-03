@@ -39,3 +39,21 @@ h1 {
        
     }
 
+table{
+    color:black;
+    
+}
+button{
+    padding: 10px;
+    font-size: medium;
+    font-weight: bold;
+    color: black;
+    border-radius: 3em;
+    background-color: burlywood;
+}
+
+table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
